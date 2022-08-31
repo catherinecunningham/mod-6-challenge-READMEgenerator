@@ -39,14 +39,14 @@ inquirer.prompt([
         type: "input",
         message: "Describe any tests needed for your project.",
         name: "tests"
-    }
+    },
     //licenses
     {
         //license options in array
         type: "list",
-        message: "",
-        name: "",
-        choices: ["", ""]
+        message: "Select a license your project will use.",
+        name: "license",
+        choices: ["Apache 2.0", "MIT", "The Unlicense", "no license"]
     }
 ]).then(ans => {
     console.log(ans.title)
@@ -57,13 +57,24 @@ inquirer.prompt([
 # Table of Contents
 [Text to display](#Description)
 
-# Description
+# Description 
+${ans.description}
     
-## stuff goes here HAMMERS
+# Installation
+${ans.installation}
+
+# Usage
+${ans.usage}
+
+# Contribution
+${ans.contribution}
+
+# Tests
+${ans.tests}
 
 # License
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
     
     `)
