@@ -3,14 +3,46 @@ const inquirer = require("inquirer")
 const fs = require("fs")
 
 inquirer.prompt([
+    //title
     {
         // need type, message, and name
         type: "input", 
         message: "What is the title of your project?",
         name: "title"
     },
-    // description, installation instructions, usage information, contribution guidelines, and test instructions
+    //description
     {
+        type: "input",
+        message: "Write a description for your project.",
+        name: "description"
+    },
+    //installation
+    {
+        type: "input",
+        message: "Write installation instructions for your project.",
+        name: "installation"
+    },
+    //usage
+    {
+        type: "input",
+        message: "Write any usage information you have for your project.",
+        name: "usage"
+    },
+    //contribution
+    {
+        type: "input",
+        message: "Describe how people can contribute to your project.",
+        name: "contribution"
+    },
+    //tests
+    {
+        type: "input",
+        message: "Describe any tests needed for your project.",
+        name: "tests"
+    }
+    //licenses
+    {
+        //license options in array
         type: "list",
         message: "",
         name: "",
