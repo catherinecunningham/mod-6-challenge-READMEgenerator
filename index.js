@@ -55,7 +55,7 @@ inquirer.prompt([
 # ${ans.title}
 
 # Table of Contents
-[Text to display](#Description)
+[Description](#Description)  [Installation](#Installation)  [Usage](#Usage) [Contribution](#Contribution) [Tests](#Tests) [License](#License)
 
 # Description 
 ${ans.description}
