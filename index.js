@@ -51,7 +51,7 @@ inquirer.prompt([
 ]).then(ans => {
     console.log(ans.title)
     
-    fs.writeFileSync("README.md", `
+    fs.writeFileSync("./createdREADMEs/README.md", `
 # ${ans.title}
 
 # Table of Contents
