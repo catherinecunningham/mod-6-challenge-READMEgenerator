@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer")
 const fs = require("fs")
+const apache = "(https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+
 
 inquirer.prompt([
     //title
@@ -47,7 +49,11 @@ inquirer.prompt([
         message: "Select a license your project will use.",
         name: "license",
         choices: ["Apache 2.0", "MIT", "The Unlicense", "no license"]
-    }
+
+    
+
+        }
+    
 ]).then(ans => {
     console.log(ans.title)
     
@@ -74,9 +80,9 @@ ${ans.tests}
 
 # License
 
+${ans.license}
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-    
     `)
 })
 
