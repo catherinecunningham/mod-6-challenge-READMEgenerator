@@ -1,8 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer")
 const fs = require("fs")
-const apache = "(https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
 
+const generateMarkdown = require("./utils/generateMarkdown")
 
 inquirer.prompt([
     //title
