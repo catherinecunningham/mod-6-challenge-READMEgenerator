@@ -2,8 +2,6 @@
 const inquirer = require("inquirer")
 const fs = require("fs")
 
-const generateMarkdown = require("./utils/generateMarkdown")
-
 inquirer.prompt([
     //title
     {
@@ -48,16 +46,22 @@ inquirer.prompt([
         type: "list",
         message: "Select a license your project will use.",
         name: "license",
-        choices: ["Apache 2.0", "MIT", "The Unlicense", "no license"]
-
-    
+        choices: ["Apache_2.0", "MIT", "The_Unlicense", "no license"]
 
         }
     
 ]).then(ans => {
     console.log(ans.title)
-    
-    fs.writeFileSync("./createdREADMEs/README.md", `
+
+if (ans.license != "no license") {
+    var license = `[![License](https://img.shields.io/badge/License-${ans.license}-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+
+}
+else {
+    var license = "N/A"
+}
+
+    fs.writeFileSync("../createdREADMEs/README.md", `
 # ${ans.title}
 
 # Table of Contents
@@ -79,17 +83,10 @@ ${ans.contribution}
 ${ans.tests}
 
 # License
-
-${ans.license}
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+${license}
 
     `)
 })
-
-// licenses: apache, MIT, the unlicense, no license
-// 
-
-
 
 // TODO: Create an array of questions for user input
 const questions = [];
